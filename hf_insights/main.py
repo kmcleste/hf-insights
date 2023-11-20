@@ -17,6 +17,7 @@ def main():
     df: pd.DataFrame = create_df()
 
     st.dataframe(df)
+    st.text(df.shape)
 
 
 if __name__ == "__main__":

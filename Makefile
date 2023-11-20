@@ -41,5 +41,8 @@ deps: ## Install/Update dependencies
 	poetry update
 	poetry run pre-commit autoupdate
 
+reqs:
+	poetry export --without-hashes --format=requirements.txt > requirements.txt
+
 ui:
 	poetry run streamlit run hf_insights/main.py
