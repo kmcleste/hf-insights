@@ -1,0 +1,50 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-ast
+      - id: check-merge-conflict
+      - id: check-case-conflict
+      - id: check-json
+      - id: check-yaml
+      - id: name-tests-test
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: mixed-line-ending
+  - repo: local
+    hooks:
+      - id: autoflake
+        name: autoflake
+        entry: poetry run autoflake -r -i --remove-all-unused-imports --remove-unused-variables
+        language: system
+        types: [python]
+      - id: isort
+        name: isort (python)
+        entry: poetry run isort
+        language: system
+        types: [python]
+      - id: black
+        name: black
+        entry: poetry run black
+        language: system
+        types: [python]
+      - id: pyupgrade
+        name: pyupgrade
+        entry: pyupgrade --py38-plus
+        language: system
+        types: [python]
+      - id: flake8
+        name: flake8
+        entry: poetry run flake8
+        language: system
+        types: [python]
+      - id: bandit
+        name: bandit
+        entry: poetry run bandit -c pyproject.toml
+        language: system
+        types: [python]
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v2.42.1
+    hooks:
+      - id: commitizen
+        stages: [commit-msg]

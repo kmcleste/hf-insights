@@ -1,0 +1,77 @@
+[tool.poetry]
+name = "hf-insights"
+version = "0.0.1"
+description = "A short project description."
+authors = ["Kyle McLester <kyle.mclester@gmail.com>"]
+license = "Not open source"
+readme = "README.md"
+homepage = "https://kmcleste.github.io/hf-insights/"
+repository = "https://github.com/kmcleste/hf-insights"
+keywords = ["python"]
+include = ["LICENSE"]
+classifiers = [
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+packages = [{include = "hf_insights"}]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.9.7 || >3.9.7,<3.12"
+rich = "^13.7.0"
+streamlit = "^1.28.2"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "22.6.0"
+flake8 = "^6.0.0"
+pre-commit = "^2.21.0"
+pytest = "^7.2.0"
+coverage = "^7.0.1"
+bandit = {extras = ["toml"], version = "^1.7.4"}
+mkdocs = "^1.4.2"
+mkdocs-material = "^9.0.6"
+mkdocstrings = "^0.20.0"
+commitizen = "^2.40.0"
+autoflake = "^2.0.1"
+isort = "^5.12.0"
+mkdocstrings-python = "^0.8.3"
+pyupgrade = "^3.3.1"
+ipykernel = "^6.26.0"
+ipywidgets = "^8.1.1"
+
+
+[tool.poetry.group.scrape.dependencies]
+httpx = "^0.25.1"
+bs4 = "^0.0.1"
+pydantic = "^2.5.1"
+tqdm = "^4.66.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+filterwarnings = []
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+version = "0.0.1"
+tag_format = "v$version"
+version_files = ["pyproject.toml:version", "hf_insights/__version__.py"]
+update_changelog_on_bump = true
+
+[tool.black]
+line-length = 88
+target-version = ["py38", "py39", "py310"]
+include = '\.pyi?'
+
+[tool.bandit]
+skips = ["B101", "B104", "B501", "B603", "B607"]
+
+[tool.isort]
+profile = "black"
+src_paths = ["hf_insights"]
