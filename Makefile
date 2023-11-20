@@ -40,3 +40,6 @@ clean: ## Clean package
 deps: ## Install/Update dependencies
 	poetry update
 	poetry run pre-commit autoupdate
+
+ui:
+	poetry run streamlit run hf_insights/main.py
