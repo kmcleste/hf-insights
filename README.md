@@ -31,6 +31,8 @@ To download the dataset, you will need git-lfs. See [these instructions](https:/
     source venv/bin/activate
     # Install dependencies
     pip install -r requirements.txt
+    # Run the UI
+    make ui
     ```
 
     Note: If you decide to run the notebook, scraping will take ~ 45 minutes
