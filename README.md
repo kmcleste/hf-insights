@@ -1,5 +1,7 @@
 # Huggingface Insights
 
+[![Streamlit badge](https://img.shields.io/badge/Streamlit-Cloud-red?style=flat-sqaure)](https://kmcleste-hf-insights-hf-insights01-home-ibivet.streamlit.app/)
+
 The goal of this analysis is to perform a high level overview of which models and tasks are most popular on Huggingface. Seeing as Huggingface is currently the defacto standard for model hosting and sharing, it is safe to assume any patterns observed should be a good indicator of industry trends and user interests. These simple metrics can also provide insight into the current "model market" saturation that exists -- models are being pumped out daily and it's no wonder MLE's and Data Scientists might be feeling overwhelemed! There's an incredible amount of information and buzz regarding SOTA models to wade through; hopefully this dashboard can help you narrow down some areas of interest.
 
 Here is a link to the [public tableau workbook](https://public.tableau.com/shared/8MNBSMBQC?:display_count=n&:origin=viz_share_link).
