@@ -19,4 +19,4 @@ reqs:
 	poetry export --without-hashes --format=requirements.txt > requirements.txt
 
 ui:
-	poetry run streamlit run hf_insights/main.py
+	poetry run streamlit run hf_insights/01_Home.py

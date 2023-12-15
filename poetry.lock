@@ -589,6 +589,20 @@ files = [
 tests = ["asttokens (>=2.1.0)", "coverage", "coverage-enable-subprocess", "ipython", "littleutils", "pytest", "rich"]
 
 [[package]]
+name = "fastjsonschema"
+version = "2.19.0"
+description = "Fastest Python implementation of JSON schema"
+optional = false
+python-versions = "*"
+files = [
+    {file = "fastjsonschema-2.19.0-py3-none-any.whl", hash = "sha256:b9fd1a2dd6971dbc7fee280a95bd199ae0dd9ce22beb91cc75e9c1c528a5170e"},
+    {file = "fastjsonschema-2.19.0.tar.gz", hash = "sha256:e25df6647e1bc4a26070b700897b07b542ec898dd4f1f6ea013e7f6a88417225"},
+]
+
+[package.extras]
+devel = ["colorama", "json-spec", "jsonschema", "pylint", "pytest", "pytest-benchmark", "pytest-cache", "validictory"]
+
+[[package]]
 name = "filelock"
 version = "3.13.1"
 description = "A platform independent file lock."
@@ -1312,6 +1326,27 @@ files = [
 ]
 
 [[package]]
+name = "nbformat"
+version = "5.9.2"
+description = "The Jupyter Notebook format"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "nbformat-5.9.2-py3-none-any.whl", hash = "sha256:1c5172d786a41b82bcfd0c23f9e6b6f072e8fb49c39250219e4acfff1efe89e9"},
+    {file = "nbformat-5.9.2.tar.gz", hash = "sha256:5f98b5ba1997dff175e77e0c17d5c10a96eaed2cbd1de3533d1fc35d5e111192"},
+]
+
+[package.dependencies]
+fastjsonschema = "*"
+jsonschema = ">=2.6"
+jupyter-core = "*"
+traitlets = ">=5.1"
+
+[package.extras]
+docs = ["myst-parser", "pydata-sphinx-theme", "sphinx", "sphinxcontrib-github-alt", "sphinxcontrib-spelling"]
+test = ["pep440", "pre-commit", "pytest", "testpath"]
+
+[[package]]
 name = "nest-asyncio"
 version = "1.5.8"
 description = "Patch asyncio to allow nested event loops"
@@ -1601,6 +1636,21 @@ files = [
 [package.extras]
 docs = ["furo (>=2023.7.26)", "proselint (>=0.13)", "sphinx (>=7.1.1)", "sphinx-autodoc-typehints (>=1.24)"]
 test = ["appdirs (==1.4.4)", "covdefaults (>=2.3)", "pytest (>=7.4)", "pytest-cov (>=4.1)", "pytest-mock (>=3.11.1)"]
+
+[[package]]
+name = "plotly"
+version = "5.18.0"
+description = "An open-source, interactive data visualization library for Python"
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "plotly-5.18.0-py3-none-any.whl", hash = "sha256:23aa8ea2f4fb364a20d34ad38235524bd9d691bf5299e800bca608c31e8db8de"},
+    {file = "plotly-5.18.0.tar.gz", hash = "sha256:360a31e6fbb49d12b007036eb6929521343d6bee2236f8459915821baefa2cbb"},
+]
+
+[package.dependencies]
+packaging = "*"
+tenacity = ">=6.2.0"
 
 [[package]]
 name = "pluggy"
@@ -2867,6 +2917,44 @@ tooling = ["black (>=23.7.0)", "pyright (>=1.1.325)", "ruff (>=0.0.287)"]
 tooling-extras = ["pyaml (>=23.7.0)", "pypandoc-binary (>=1.11)", "pytest (>=7.4.0)"]
 
 [[package]]
+name = "vegafusion"
+version = "1.5.0"
+description = "Core tools for using VegaFusion from Python"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "vegafusion-1.5.0-py3-none-any.whl", hash = "sha256:ed52e725d6be093749f8627da58c65c09e65751c2ab67980690f434f9ee276e7"},
+    {file = "vegafusion-1.5.0.tar.gz", hash = "sha256:d64ff7089a3554e7706b2ef2791f0027140bd1fdec7e3fde4c5c45f3073db0e4"},
+]
+
+[package.dependencies]
+altair = ">=4.2.0"
+pandas = "*"
+protobuf = "*"
+psutil = "*"
+pyarrow = ">=5"
+vegafusion-python-embed = {version = "1.5.0", optional = true, markers = "extra == \"embed\""}
+vl-convert-python = {version = ">=0.7.0", optional = true, markers = "extra == \"embed\""}
+
+[package.extras]
+embed = ["vegafusion-python-embed (==1.5.0)", "vl-convert-python (>=0.7.0)"]
+
+[[package]]
+name = "vegafusion-python-embed"
+version = "1.5.0"
+description = "vegafusion-python-embed PyO3 Python Package"
+optional = false
+python-versions = "*"
+files = [
+    {file = "vegafusion_python_embed-1.5.0-cp38-abi3-macosx_10_7_x86_64.whl", hash = "sha256:25e9406b5648b212404bc5d98a815c31510be01fb77d95a0be4cdd418fbb4830"},
+    {file = "vegafusion_python_embed-1.5.0-cp38-abi3-macosx_11_0_arm64.whl", hash = "sha256:df20cec4a6bf303392bc02980f5f37200729d29c35299e90d794ee8b9d68ca5a"},
+    {file = "vegafusion_python_embed-1.5.0-cp38-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:b5e0064daf60f3d444836b9661264b2e2de3a11f2bc24d78a660dbb0d16ec822"},
+    {file = "vegafusion_python_embed-1.5.0-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:2d467317bb2090adc529e806d9e748b9a9587be732407ebbed05cc7835f83657"},
+    {file = "vegafusion_python_embed-1.5.0-cp38-abi3-win_amd64.whl", hash = "sha256:09633b01dcc520c4f146023961182f77a025d043d3f0cafc03f5825ed5a34260"},
+    {file = "vegafusion_python_embed-1.5.0.tar.gz", hash = "sha256:21063271ee89eab64eb0baf7035cc859ebf42107d7b9417c523b8b7da2531460"},
+]
+
+[[package]]
 name = "virtualenv"
 version = "20.24.6"
 description = "Virtual Python Environment builder"
@@ -2885,6 +2973,21 @@ platformdirs = ">=3.9.1,<4"
 [package.extras]
 docs = ["furo (>=2023.7.26)", "proselint (>=0.13)", "sphinx (>=7.1.2)", "sphinx-argparse (>=0.4)", "sphinxcontrib-towncrier (>=0.2.1a0)", "towncrier (>=23.6)"]
 test = ["covdefaults (>=2.3)", "coverage (>=7.2.7)", "coverage-enable-subprocess (>=1)", "flaky (>=3.7)", "packaging (>=23.1)", "pytest (>=7.4)", "pytest-env (>=0.8.2)", "pytest-freezer (>=0.4.8)", "pytest-mock (>=3.11.1)", "pytest-randomly (>=3.12)", "pytest-timeout (>=2.1)", "setuptools (>=68)", "time-machine (>=2.10)"]
+
+[[package]]
+name = "vl-convert-python"
+version = "1.2.0"
+description = "Convert Vega-Lite chart specifications to SVG, PNG, or Vega"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "vl_convert_python-1.2.0-cp37-abi3-macosx_10_7_x86_64.whl", hash = "sha256:9691fa0b94b2d59849149c7702ab12b9bc1f9b8db0db060d07ad6646108cb092"},
+    {file = "vl_convert_python-1.2.0-cp37-abi3-macosx_11_0_arm64.whl", hash = "sha256:d18d36994cd6f3a75fd1665a3689d820e124def6d5faf28cf5b4fd5d6ad1013e"},
+    {file = "vl_convert_python-1.2.0-cp37-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:eff557769ed718421ae12ae7e23ae38de8c63798688e38f464b84824c4de5224"},
+    {file = "vl_convert_python-1.2.0-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:04f88ad9a575026f23e89360faad681d2c26487bc18c07b277b874314ba2dff0"},
+    {file = "vl_convert_python-1.2.0-cp37-abi3-win_amd64.whl", hash = "sha256:60113d6283ae4835053e15e5ccbb9e595cd66e8d294092c2975c57024fc5687b"},
+    {file = "vl_convert_python-1.2.0.tar.gz", hash = "sha256:fa92eba4c84cb69aa88c10b70e03de75318394ce90ffde1a657c644563380ed9"},
+]
 
 [[package]]
 name = "watchdog"
@@ -2965,4 +3068,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.9.7 || >3.9.7,<3.12"
-content-hash = "87f0ea51770a870c306bde51b4f5669be7f618e0d68352d8469b7dbfda9bb62e"
+content-hash = "3cfc7cbe49b3b7d9c48df2cc36fb13858b93af2399fcfdd967bae36b3dcd0aed"

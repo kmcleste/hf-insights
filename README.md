@@ -22,7 +22,7 @@ To download the dataset, you will need git-lfs. See [these instructions](https:/
     git lfs pull
     ```
 
-3. (Optional) To run the notebook, you will need to install the python dependencies:
+3. (Optional) To run the webscraping notebook or locally host the streamlit ui, you will need to install the python dependencies:
 
     ```bash
     # Create a virtual environment
@@ -36,6 +36,8 @@ To download the dataset, you will need git-lfs. See [these instructions](https:/
     Note: If you decide to run the notebook, scraping will take ~ 45 minutes
 
 ## Data
+
+The data used in this project was scraped from [https://huggingface.co/models](https://huggingface.co/models). Various statistics, such as likes, downloads, model author, model id, repo type, and task, were collected. The data scrape occurred September 22nd. At the rate the AI/ML industry moves, that means this data is wildly outdated at this point -- but should serve as a reference point for the overall interest the community has particular types of models and which authors are most active.
 
 | Column        | Type                |
 | ------------- | ------------------- |
@@ -51,4 +53,6 @@ To download the dataset, you will need git-lfs. See [these instructions](https:/
 
 ## Future Work
 
-Given that this is just a first pass, there are many things I would like to explore going forward. For one, it would be incredibly beneficial to convert this data into a time series. To do so would be as simple as running a CRON job to pull the latest model metrics. With this, we would be able to better understand model hype. I would also be interested to explore the top N models, their respective companies (if applicable), the techniques used to train these models, funding required, and any novel approaches used.
+ If I were to continue working on this project, I would like to schedule perioding data collections to get a better view
+ into model/author/task trends. To be frank, bar charts aren't very interesting to look at and time series data could tell us
+ a lot more about hype cycles, velocity of model adoption and the markets changing risk tolerance regarding open-source models.
