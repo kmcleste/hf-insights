@@ -1,3 +1,4 @@
 data/models.csv filter=lfs diff=lfs merge=lfs -text
 data/models.json filter=lfs diff=lfs merge=lfs -text
 data/models.* filter=lfs diff=lfs merge=lfs -text
+notebooks/visualizations.ipynb filter=lfs diff=lfs merge=lfs -text
